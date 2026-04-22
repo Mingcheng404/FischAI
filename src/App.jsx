@@ -12,17 +12,40 @@ const PAGE_BY_PATH = {
 };
 
 const REMOVED_PATHS = new Set(["/ai-analysis", "/comparison", "/rod-comparison", "/calculator"]);
+const BASE_PREFIX = (() => {
+  const raw = String(import.meta.env.BASE_URL || "/").trim();
+  const normalized = raw.replace(/^\/+|\/+$/g, "");
+  return normalized ? `/${normalized}` : "";
+})();
+
+function stripBasePrefix(pathname) {
+  if (!BASE_PREFIX) return pathname;
+  const lowerPath = pathname.toLowerCase();
+  const lowerBase = BASE_PREFIX.toLowerCase();
+  if (lowerPath === lowerBase) return "/";
+  if (lowerPath.startsWith(`${lowerBase}/`)) {
+    return pathname.slice(BASE_PREFIX.length) || "/";
+  }
+  return pathname;
+}
+
+function withBasePrefix(pathname) {
+  if (!BASE_PREFIX) return pathname;
+  return `${BASE_PREFIX}${pathname}`;
+}
 
 function AppContent() {
   const { lang, setLanguage, t } = useI18n();
   const [activePage, setActivePage] = useState("ai-chat");
 
   useEffect(() => {
-    const pathname = String(window.location.pathname || "/")
-      .toLowerCase()
-      .replace(/\/+$/, "") || "/";
+    const pathname = stripBasePrefix(
+      String(window.location.pathname || "/")
+        .toLowerCase()
+        .replace(/\/+$/, "") || "/"
+    );
     if (REMOVED_PATHS.has(pathname)) {
-      window.history.replaceState({}, "", "/ai-chat");
+      window.history.replaceState({}, "", withBasePrefix("/ai-chat"));
       setActivePage("ai-chat");
       return;
     }
@@ -32,8 +55,9 @@ function AppContent() {
   useEffect(() => {
     const targetPath =
       activePage === "ai-chat" ? "/ai-chat" : activePage === "mutations" ? "/mutations" : "/countdowns";
-    if (window.location.pathname !== targetPath) {
-      window.history.replaceState({}, "", targetPath);
+    const fullTargetPath = withBasePrefix(targetPath);
+    if (window.location.pathname !== fullTargetPath) {
+      window.history.replaceState({}, "", fullTargetPath);
     }
   }, [activePage]);
 
@@ -154,3 +178,4 @@ export default function App() {
     </LanguageProvider>
   );
 }
+
