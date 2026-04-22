@@ -14,7 +14,8 @@ const dictionaries = {
       badge: "Fisch AI Assistant",
       title: "Ask Fisch questions",
       subtitle: "This assistant only answers Fisch-related questions using the local game database.",
-      dataCoverage: "Data loaded: {rods} rods · {fish} fish · {mutations} mutations",
+      dataCoverage:
+        "Data loaded: {rods} rods · {fish} fish · {mutations} mutations · {islands} islands · {totems} totems",
       inputPlaceholder: "Ask about rods, fish, mutations, islands, or totems...",
       send: "Send",
       thinking: "Thinking...",
@@ -138,7 +139,7 @@ const dictionaries = {
       badge: "Fisch AI 助手",
       title: "提问 Fisch 问题",
       subtitle: "该助手仅根据本地游戏数据库回答 Fisch 相关问题。",
-      dataCoverage: "已加载数据：{rods} 鱼竿 · {fish} 鱼类 · {mutations} 突变",
+      dataCoverage: "已加载数据：{rods} 鱼竿 · {fish} 鱼类 · {mutations} 突变 · {islands} 岛屿 · {totems} 图腾",
       inputPlaceholder: "可提问鱼竿、鱼类、突变、岛屿或图腾...",
       send: "发送",
       thinking: "思考中...",
@@ -298,4 +299,5 @@ export function useI18n() {
   if (!ctx) throw new Error("useI18n must be used inside LanguageProvider");
   return ctx;
 }
+
 
