@@ -30,6 +30,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate AI environment variables
+        env:
+          VITE_PROBEX_API_URL: ${{ secrets.VITE_PROBEX_API_URL }}
+          VITE_PROBEX_MODEL: ${{ secrets.VITE_PROBEX_MODEL }}
+          VITE_PROBEX_API_KEY: ${{ secrets.VITE_PROBEX_API_KEY }}
+        run: |
+          if [ -z "$VITE_PROBEX_API_KEY" ]; then
+            echo "Missing secret: VITE_PROBEX_API_KEY"
+            exit 1
+          fi
+          if [ -z "$VITE_PROBEX_API_URL" ]; then
+            echo "Missing secret: VITE_PROBEX_API_URL"
+            exit 1
+          fi
+          if [ -z "$VITE_PROBEX_MODEL" ]; then
+            echo "Missing secret: VITE_PROBEX_MODEL"
+            exit 1
+          fi
+          echo "AI environment variables are configured."
+
       - name: Build
         run: npm run build
         env:
@@ -55,3 +75,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
