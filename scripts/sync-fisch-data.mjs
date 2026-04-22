@@ -1056,9 +1056,13 @@ async function run() {
   data.islands = enrichedIslands.islands;
   const enrichedMutations = await enrichMutationsFromWiki(data.mutations);
   data.mutations = enrichedMutations.mutations;
-  data.totems = wikiTotems.length
-    ? wikiTotems
-    : [{ id: "none", name: "No Totem", effect: "No special event", earnings_multiplier: 1 }];
+  if (wikiTotems.length) {
+    data.totems = wikiTotems;
+  } else if (Array.isArray(data.totems) && data.totems.length > 1) {
+    // Keep curated totems from totem-wiki-seed / manual edits if wiki table yields none
+  } else {
+    data.totems = [{ id: "none", name: "No Totem", effect: "No special event", earnings_multiplier: 1 }];
+  }
   normalizeDataRecords(data);
 
   mutationDoc.mutations = [...(data.mutations || [])];
@@ -1070,6 +1074,7 @@ async function run() {
       fish: fishTitles.length || data.fish.length || 0,
       mutations: mutationTitles.length || data.mutations.length || 0,
       islands: islandTitles.length || data.islands.length || 0,
+      totems: (data.totems || []).length,
     },
     rod_pages_updated: enrichedRods.updated,
     fish_pages_updated: enrichedFish.updated,
