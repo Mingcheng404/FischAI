@@ -471,9 +471,10 @@ function buildAiContext(data, query) {
   const context = {
     source: "local_fisch_database",
     instructions_for_model: [
-      "Use total_counts for any database size/count statements (including total_counts.totems for totems).",
-      "Never infer totem count from a single 'No Totem' row; use total_counts.totems and relevant.totems.",
-      "Do not claim that relevant arrays are the full database.",
+      "Repository scripts (e.g. totem-wiki-seed.mjs) are not in this context. Only fields below (from public/data.json) exist.",
+      "For totem counts, use total_counts.totems; it must match totem_names_all.length. List real totem names from totem_names_all and relevant.totems.",
+      "Never infer totem data from a single 'No Totem' row; the full set is in totem_names_all.",
+      "Do not claim that relevant arrays are the full database except where total_counts is explicit.",
       "If user asks for all mutations, state the total using total_counts.mutations and provide representative entries from relevant.mutations unless explicitly asked for exhaustive list.",
     ],
     total_counts: {
@@ -483,6 +484,7 @@ function buildAiContext(data, query) {
       islands: islands.length,
       totems: totems.length,
     },
+    totem_names_all: totems.map((x) => x?.name).filter(Boolean),
     requested_item: hasSpecificItem
       ? {
           type: rodHit
