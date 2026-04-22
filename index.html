@@ -14,6 +14,19 @@
   </head>
   <body class="bg-slate-950 text-slate-100">
     <div id="root"></div>
+    <script>
+      // Decode route forwarded by public/404.html on GitHub Pages.
+      (function (l) {
+        if (l.search[1] === "/") {
+          const decoded = l.search
+            .slice(1)
+            .split("&")
+            .map((s) => s.replace(/~and~/g, "&"))
+            .join("?");
+          window.history.replaceState(null, "", l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
