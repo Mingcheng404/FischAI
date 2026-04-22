@@ -2,6 +2,7 @@ node_modules/
 dist/
 
 # Local environment secrets
+.env
 .env.local
 .env.*.local
 
