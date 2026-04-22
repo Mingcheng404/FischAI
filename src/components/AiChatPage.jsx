@@ -549,7 +549,7 @@ function buildAiContext(data, query) {
             ? [totemHit]
             : []
           : findByNameIncludes(totems, queryLower),
-        ["name", "effect", "earnings_multiplier"],
+        ["name", "effect", "earnings_multiplier", "price_c$", "obtainability", "wiki_url"],
         5
       ),
     },
