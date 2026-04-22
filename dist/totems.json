@@ -1,0 +1,255 @@
+{
+  "totems": [
+    {
+      "id": "none",
+      "name": "No Totem",
+      "effect": "No totem event is active; baseline fishing conditions.",
+      "earnings_multiplier": 1,
+      "price_c$": "—",
+      "obtainability": "Default (no item used)",
+      "wiki_url": "https://fischipedia.org/wiki/No_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "sundial_totem",
+      "name": "Sundial Totem",
+      "effect": "Advances the in-game daylight cycle.",
+      "earnings_multiplier": 1.03,
+      "price_c$": 2000,
+      "obtainability": "Personal Aquarium, Sunken Chests, Daily Shop, Sunstone Island (Sunstone Cave area)",
+      "wiki_url": "https://fischipedia.org/wiki/Sundial_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "clearcast_totem",
+      "name": "Clearcast Totem",
+      "effect": "Forces clear weather for a time.",
+      "earnings_multiplier": 1.03,
+      "price_c$": 1000,
+      "obtainability": "Personal Aquarium, Moosewood vendor",
+      "wiki_url": "https://fischipedia.org/wiki/Clearcast_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "tempest_totem",
+      "name": "Tempest Totem",
+      "effect": "Summons rain (storm-friendly conditions).",
+      "earnings_multiplier": 1.05,
+      "price_c$": 2000,
+      "obtainability": "Personal Aquarium, Sunken Chests, Terrapin Island (Terrapin Cave)",
+      "wiki_url": "https://fischipedia.org/wiki/Tempest_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "windset_totem",
+      "name": "Windset Totem",
+      "effect": "Summons wind weather.",
+      "earnings_multiplier": 1.08,
+      "price_c$": 2000,
+      "obtainability": "Snowcap Island (Snowcap Cave)",
+      "wiki_url": "https://fischipedia.org/wiki/Windset_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "smokescreen_totem",
+      "name": "Smokescreen Totem",
+      "effect": "Summons fog (smoke) weather.",
+      "earnings_multiplier": 1.08,
+      "price_c$": 2000,
+      "obtainability": "Personal Aquarium, Sunken Chests, Mushgrove Swamp",
+      "wiki_url": "https://fischipedia.org/wiki/Smokescreen_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "meteor_totem",
+      "name": "Meteor Totem",
+      "effect": "Starts a meteor / streaking-star style event (cosmic spawns).",
+      "earnings_multiplier": 1.1,
+      "price_c$": 75000,
+      "obtainability": "Personal Aquarium, Daily Shop, Sunken Chests, Treasure Chests, Roslit Volcano",
+      "wiki_url": "https://fischipedia.org/wiki/Meteor_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "starfall_totem",
+      "name": "Starfall Totem",
+      "effect": "Starfall event—cosmic rarities and special fish windows.",
+      "earnings_multiplier": 1.1,
+      "price_c$": "Craft (Totem Carver) / events",
+      "obtainability": "Totem Carver (Sunstone Island), high-end sources",
+      "wiki_url": "https://fischipedia.org/wiki/Starfall_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "aurora_totem",
+      "name": "Aurora Totem",
+      "effect": "Triggers Aurora event (cosmic/aurora rarities).",
+      "earnings_multiplier": 1.15,
+      "price_c$": "5,000,000 C$ (typical endgame vendor)",
+      "obtainability": "Vendors, events (check wiki for current source)",
+      "wiki_url": "https://fischipedia.org/wiki/Aurora_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "eclipse_totem",
+      "name": "Eclipse Totem",
+      "effect": "Eclipse / dark-sky style event and associated spawns.",
+      "earnings_multiplier": 1.13,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Vendors, events",
+      "wiki_url": "https://fischipedia.org/wiki/Eclipse_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "blizzard_totem",
+      "name": "Blizzard Totem",
+      "effect": "Summons a blizzard (cold storm) weather pattern.",
+      "earnings_multiplier": 1.08,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Vendors, events",
+      "wiki_url": "https://fischipedia.org/wiki/Blizzard_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "avalanche_totem",
+      "name": "Avalanche Totem",
+      "effect": "Heavy cold / snowslide-style weather event.",
+      "earnings_multiplier": 1.1,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Vendors, events",
+      "wiki_url": "https://fischipedia.org/wiki/Avalanche_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "blue_moon_totem",
+      "name": "Blue Moon Totem",
+      "effect": "Blue Moon event window (rare moon spawns and mutations).",
+      "earnings_multiplier": 1.13,
+      "price_c$": "Varies; listed as purchasable (Blue Moon) in update notes",
+      "obtainability": "Blue Moon / vendor (see wiki)",
+      "wiki_url": "https://fischipedia.org/wiki/Blue_Moon_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "cursed_storm_totem",
+      "name": "Cursed Storm Totem",
+      "effect": "Cursed storm event—hazard and rare fish table shifts.",
+      "earnings_multiplier": 1.16,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Vendors, events",
+      "wiki_url": "https://fischipedia.org/wiki/Cursed_Storm_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "zeus_storm_totem",
+      "name": "Zeus Storm Totem",
+      "effect": "Major lightning storm (Zeus) event; top-tier value spikes.",
+      "earnings_multiplier": 1.16,
+      "price_c$": "2,500,000 C$ (common listing; verify in-game)",
+      "obtainability": "Endgame shop / special sources",
+      "wiki_url": "https://fischipedia.org/wiki/Zeus_Storm_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "poseidons_wrath_totem",
+      "name": "Poseidon's Wrath Totem",
+      "effect": "Sea-storm (Poseidon) event with strong ocean spawns.",
+      "earnings_multiplier": 1.16,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Vendors, events",
+      "wiki_url": "https://fischipedia.org/wiki/Poseidon%27s_Wrath_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "mutation_totem",
+      "name": "Mutation Totem",
+      "effect": "Summons a Mutation Surge (extra mutation weight on fish).",
+      "earnings_multiplier": 1.22,
+      "price_c$": 200000,
+      "obtainability": "Personal Aquarium, Daily Shop, codes, etc.",
+      "wiki_url": "https://fischipedia.org/wiki/Mutation_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "shiny_totem",
+      "name": "Shiny Totem",
+      "effect": "Shiny / Luminous-style surge to boost Shiny and related rolls.",
+      "earnings_multiplier": 1.2,
+      "price_c$": "Craft (Totem Carver) / events",
+      "obtainability": "Totem Carver crafting",
+      "wiki_url": "https://fischipedia.org/wiki/Shiny_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "sparkling_totem",
+      "name": "Sparkling Totem",
+      "effect": "Sparkling surge—boosts Sparkling and similar mutation rolls.",
+      "earnings_multiplier": 1.2,
+      "price_c$": "Craft (Totem Carver) / events",
+      "obtainability": "Totem Carver crafting",
+      "wiki_url": "https://fischipedia.org/wiki/Sparkling_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "rainbow_totem",
+      "name": "Rainbow Totem",
+      "effect": "Rainbow event after rain; among the strongest value weather windows.",
+      "earnings_multiplier": 1.22,
+      "price_c$": "Craft (Totem Carver) / high cost",
+      "obtainability": "Totem Carver (see recipe on wiki)",
+      "wiki_url": "https://fischipedia.org/wiki/Rainbow_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "megalodon_hunt_totem",
+      "name": "Megalodon Hunt Totem",
+      "effect": "Starts or boosts Megalodon hunt event (boss encounter window).",
+      "earnings_multiplier": 1.09,
+      "price_c$": "Craft (Totem Carver) / 2,500,000 C$ class listings—verify in-game",
+      "obtainability": "Totem Carver, Sunstone Island",
+      "wiki_url": "https://fischipedia.org/wiki/Megalodon_Hunt_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "kraken_hunt_totem",
+      "name": "Kraken Hunt Totem",
+      "effect": "Starts or boosts Kraken hunt event.",
+      "earnings_multiplier": 1.09,
+      "price_c$": "High cost; see wiki",
+      "obtainability": "Totem Carver",
+      "wiki_url": "https://fischipedia.org/wiki/Kraken_Hunt_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "scylla_hunt_totem",
+      "name": "Scylla Hunt Totem",
+      "effect": "Starts or boosts Scylla hunt event.",
+      "earnings_multiplier": 1.09,
+      "price_c$": "5,000,000 C$ (common listing; verify in-game)",
+      "obtainability": "Totem Carver, special sources",
+      "wiki_url": "https://fischipedia.org/wiki/Scylla_Hunt_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "colossal_dragon_hunt_totem",
+      "name": "Colossal Dragon Hunt Totem",
+      "effect": "Colossal Dragon hunt / apex boss window.",
+      "earnings_multiplier": 1.09,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Endgame / events",
+      "wiki_url": "https://fischipedia.org/wiki/Colossal_Dragon_Hunt_Totem",
+      "source": "Official Fisch Wiki"
+    },
+    {
+      "id": "frightful_pool_totem",
+      "name": "Frightful Pool Totem",
+      "effect": "Frightful / seasonal pool event (limited fish pool).",
+      "earnings_multiplier": 1.07,
+      "price_c$": "Varies; check wiki",
+      "obtainability": "Events, seasonal",
+      "wiki_url": "https://fischipedia.org/wiki/Frightful_Pool_Totem",
+      "source": "Official Fisch Wiki"
+    }
+  ],
+  "source_note": "Official Fisch Wiki — edit this file or run npm run seed:totems after changing data.json merge rules."
+}
