@@ -32,6 +32,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_PROBEX_API_URL: ${{ secrets.VITE_PROBEX_API_URL }}
+          VITE_PROBEX_MODEL: ${{ secrets.VITE_PROBEX_MODEL }}
+          VITE_PROBEX_API_KEY: ${{ secrets.VITE_PROBEX_API_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
