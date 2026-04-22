@@ -4,6 +4,13 @@ import { useI18n } from "../i18n.jsx";
 const REMOTE_API_URL = import.meta.env.VITE_PROBEX_API_URL || "https://api.probex.top/v1/chat/completions";
 const REMOTE_MODEL = import.meta.env.VITE_PROBEX_MODEL || "deepseek-v3";
 const REMOTE_API_KEY = String(import.meta.env.VITE_PROBEX_API_KEY || "").trim();
+const REMOTE_MODEL_CANDIDATES = Array.from(
+  new Set(
+    [REMOTE_MODEL, "deepseek-chat", "deepseek-v3", "deepseek-reasoner"]
+      .map((x) => String(x || "").trim())
+      .filter(Boolean)
+  )
+);
 const CHAT_STORAGE_KEY = "fisch_ai_chat_history_v1";
 
 function asArray(value) {
@@ -588,58 +595,74 @@ async function streamRemoteAnswer({
       content: String(m.content || "").slice(0, 1200),
     }));
 
-  const response = await fetch(REMOTE_API_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${REMOTE_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: REMOTE_MODEL,
-      stream: true,
-      messages: [
-        { role: "system", content: systemPrompt },
-        ...historyMessages,
-        { role: "user", content: userPrompt },
-      ],
-    }),
-  });
+  let lastStatus = 0;
+  let lastDetail = "";
 
-  if (!response.ok) {
-    const detail = await response.text().catch(() => "");
-    throw new Error(`${t("aiChat.remoteFailed")} (${response.status}) ${detail}`.trim());
-  }
-  if (!response.body) throw new Error(t("aiChat.remoteNoStream"));
+  for (const model of REMOTE_MODEL_CANDIDATES) {
+    const response = await fetch(REMOTE_API_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${REMOTE_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        stream: true,
+        messages: [
+          { role: "system", content: systemPrompt },
+          ...historyMessages,
+          { role: "user", content: userPrompt },
+        ],
+      }),
+    });
 
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder("utf-8");
-  let buffer = "";
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split("\n");
-    buffer = lines.pop() || "";
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed.startsWith("data:")) continue;
-      const payload = trimmed.slice(5).trim();
-      if (!payload || payload === "[DONE]") continue;
-      let parsed;
-      try {
-        parsed = JSON.parse(payload);
-      } catch {
+    if (!response.ok) {
+      const detail = await response.text().catch(() => "");
+      lastStatus = response.status;
+      lastDetail = detail;
+      const lowered = String(detail || "").toLowerCase();
+      const modelUnavailable =
+        lowered.includes("model_not_found") || lowered.includes("no available distributor") || lowered.includes("无可用管道");
+      if (response.status === 503 && modelUnavailable) {
         continue;
       }
-      const token =
-        parsed?.choices?.[0]?.delta?.content ??
-        parsed?.choices?.[0]?.message?.content ??
-        "";
-      if (token) onToken(token);
+      throw new Error(`${t("aiChat.remoteFailed")} (${response.status}) ${detail}`.trim());
     }
+
+    if (!response.body) throw new Error(t("aiChat.remoteNoStream"));
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    let buffer = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop() || "";
+
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed.startsWith("data:")) continue;
+        const payload = trimmed.slice(5).trim();
+        if (!payload || payload === "[DONE]") continue;
+        let parsed;
+        try {
+          parsed = JSON.parse(payload);
+        } catch {
+          continue;
+        }
+        const token =
+          parsed?.choices?.[0]?.delta?.content ??
+          parsed?.choices?.[0]?.message?.content ??
+          "";
+        if (token) onToken(token);
+      }
+    }
+    return;
   }
+  throw new Error(`${t("aiChat.remoteFailed")} (${lastStatus || 503}) ${lastDetail}`.trim());
 }
 
 export default function AiChatPage() {
