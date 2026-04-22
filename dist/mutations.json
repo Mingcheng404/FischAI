@@ -1,0 +1,2910 @@
+{
+  "mutations": [
+    {
+      "name": "Lucky Charm",
+      "value_multiplier": 1.03,
+      "rarity_tier": "Common",
+      "visual_effect": "soft-rainbow",
+      "wiki_url": "https://fischipedia.org/wiki/Lucky_Charm_(Mutation)"
+    },
+    {
+      "name": "Shiny",
+      "value_multiplier": 1.85,
+      "rarity_tier": "Uncommon",
+      "visual_effect": "sparkle-glow",
+      "wiki_url": "https://fischipedia.org/wiki/Shiny_(Mutation)"
+    },
+    {
+      "name": "Luminous",
+      "value_multiplier": 1.07,
+      "rarity_tier": "Rare",
+      "visual_effect": "light-rays",
+      "wiki_url": "https://fischipedia.org/wiki/Luminous_(Mutation)"
+    },
+    {
+      "name": "Abyssal",
+      "value_multiplier": 5.5,
+      "rarity_tier": "Rare",
+      "visual_effect": "dark-swirl",
+      "rod_sources": [
+        {
+          "rod": "Abyssal Specter Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Abyssal Enchantment",
+          "chance_percent": 20
+        }
+      ],
+      "enchanting_percent": 20,
+      "wiki_url": "https://fischipedia.org/wiki/Abyssal_(Mutation)"
+    },
+    {
+      "name": "Glitched",
+      "value_multiplier": 1.11,
+      "rarity_tier": "Rare",
+      "visual_effect": "pixel-jitter",
+      "wiki_url": "https://fischipedia.org/wiki/Glitched_(Mutation)"
+    },
+    {
+      "name": "Overclocked",
+      "value_multiplier": 1.13,
+      "rarity_tier": "Mythic",
+      "visual_effect": "neon-burst",
+      "wiki_url": "https://fischipedia.org/wiki/Overclocked_(Mutation)"
+    },
+    {
+      "name": "Frozen",
+      "value_multiplier": 1.5,
+      "rarity_tier": "Mythic",
+      "visual_effect": "ice-crackle",
+      "rod_sources": [
+        {
+          "rod": "Arctic Rod",
+          "chance_percent": 100,
+          "note": ""
+        },
+        {
+          "rod": "Summit Rod",
+          "chance_percent": 40,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Frozen_(Mutation)"
+    },
+    {
+      "name": "Infernal",
+      "value_multiplier": 7,
+      "rarity_tier": "Mythic",
+      "visual_effect": "ember-smoke",
+      "wiki_url": "https://fischipedia.org/wiki/Infernal_(Mutation)"
+    },
+    {
+      "name": "Celestial",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "star-ring",
+      "rod_sources": [
+        {
+          "rod": "Celestial Rod's passive ability",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Celestial_(Mutation)"
+    },
+    {
+      "name": "Phantom",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "shadow-trail",
+      "rod_sources": [
+        {
+          "rod": "Eidolon Rod",
+          "chance_percent": 35,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Phantom_(Mutation)"
+    },
+    {
+      "name": "Aether",
+      "value_multiplier": 12,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Aether_(Mutation)"
+    },
+    {
+      "name": "Albino",
+      "value_multiplier": 1.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Albino_(Mutation)"
+    },
+    {
+      "name": "Alien",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Alien_(Mutation)"
+    },
+    {
+      "name": "Amber",
+      "value_multiplier": 1.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Amber_(Mutation)"
+    },
+    {
+      "name": "Amped",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Microphone Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Amped_(Mutation)"
+    },
+    {
+      "name": "Anomalous",
+      "value_multiplier": 5.55,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Anomalous Enchantment",
+          "chance_percent": 20
+        }
+      ],
+      "enchanting_percent": 20,
+      "wiki_url": "https://fischipedia.org/wiki/Anomalous_(Mutation)"
+    },
+    {
+      "name": "Apollo's Infliction",
+      "value_multiplier": 3.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Apollo's_Infliction_(Mutation)"
+    },
+    {
+      "name": "Ascended",
+      "value_multiplier": 9.9,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Masterline Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Ascended_(Mutation)"
+    },
+    {
+      "name": "Ashen Fortune",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Volcanic Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Ashen_Fortune_(Mutation)"
+    },
+    {
+      "name": "Astraeus",
+      "value_multiplier": 9.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Astraeus_(Mutation)"
+    },
+    {
+      "name": "Astral",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "spawned by the Astralhook Rod",
+          "chance_percent": 63,
+          "note": ","
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Astral_(Mutation)"
+    },
+    {
+      "name": "Atlantean",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Trident Rod",
+          "chance_percent": 30,
+          "note": ""
+        },
+        {
+          "rod": "Dead Man's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Atlantean_(Mutation)"
+    },
+    {
+      "name": "Atomic",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Atomic_(Mutation)"
+    },
+    {
+      "name": "Aureate",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Auric Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Aureate_(Mutation)"
+    },
+    {
+      "name": "Aurelian",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Auric Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Aurelian_(Mutation)"
+    },
+    {
+      "name": "Aureolin",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Auric Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Aureolin_(Mutation)"
+    },
+    {
+      "name": "Aurora",
+      "value_multiplier": 6.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Aurora Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Aurora_(Mutation)"
+    },
+    {
+      "name": "Aurous",
+      "value_multiplier": 1.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Auric Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Aurous_(Mutation)"
+    },
+    {
+      "name": "Aurulent",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Auric Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Aurulent_(Mutation)"
+    },
+    {
+      "name": "Awesome",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Brick Built Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Awesome_(Mutation)"
+    },
+    {
+      "name": "Batty",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Bat Whisperer Rod's passive",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Batty_(Mutation)"
+    },
+    {
+      "name": "Beachy",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Tidal Wave Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Beachy_(Mutation)"
+    },
+    {
+      "name": "Bellona's Infliction",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Bellona's_Infliction_(Mutation)"
+    },
+    {
+      "name": "Birthday",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Birthday_(Mutation)"
+    },
+    {
+      "name": "Blarney",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Blarney_(Mutation)"
+    },
+    {
+      "name": "Blessed",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Seraphic Rod",
+          "chance_percent": 30,
+          "note": ""
+        },
+        {
+          "rod": "Masterline Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Blessed_(Mutation)"
+    },
+    {
+      "name": "Blighted",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Ice Warpers Rod",
+          "chance_percent": 25,
+          "note": ""
+        },
+        {
+          "rod": "Summit Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Blighted_(Mutation)"
+    },
+    {
+      "name": "Bliss",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Bliss_(Mutation)"
+    },
+    {
+      "name": "Bloom",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Free Spirit Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Bloom_(Mutation)"
+    },
+    {
+      "name": "Blossomed",
+      "value_multiplier": 4.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Blossomed_(Mutation)"
+    },
+    {
+      "name": "Blue",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Blue_(Mutation)"
+    },
+    {
+      "name": "Blue Moon",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Blue_Moon_(Mutation)"
+    },
+    {
+      "name": "Boreal",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Boreal Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Boreal_(Mutation)"
+    },
+    {
+      "name": "Botanic",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Botanic_(Mutation)"
+    },
+    {
+      "name": "Breezed",
+      "value_multiplier": 8.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Breezed_(Mutation)"
+    },
+    {
+      "name": "Brined",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Brine-Infused Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Brined_(Mutation)"
+    },
+    {
+      "name": "Brother",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Brother's Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Brother_(Mutation)"
+    },
+    {
+      "name": "Brown Wood",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fishing with Verdant Shear Rod",
+          "chance_percent": 33.3,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Brown_Wood_(Mutation)"
+    },
+    {
+      "name": "Bubblegum",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Bubblegum_(Mutation)"
+    },
+    {
+      "name": "Bunny",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Bunny_(Mutation)"
+    },
+    {
+      "name": "Candy",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Candy_(Mutation)"
+    },
+    {
+      "name": "Carrot",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Carrot Rod",
+          "chance_percent": 15,
+          "note": ""
+        },
+        {
+          "rod": "spawned by the Carrot Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Carrot_(Mutation)"
+    },
+    {
+      "name": "Cement",
+      "value_multiplier": 1.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Cinder Block Rod",
+          "chance_percent": 70,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Cement_(Mutation)"
+    },
+    {
+      "name": "Chaotic",
+      "value_multiplier": 6.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Chaotic Enchantment",
+          "chance_percent": 12
+        }
+      ],
+      "enchanting_percent": 12,
+      "wiki_url": "https://fischipedia.org/wiki/Chaotic_(Mutation)"
+    },
+    {
+      "name": "Charred",
+      "value_multiplier": 0.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fishing in Zeus Rod's",
+          "chance_percent": 10,
+          "note": "\"Thunderstorm\" ability"
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Charred_(Mutation)"
+    },
+    {
+      "name": "Chilled",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fishing with the Frostbane Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Chilled_(Mutation)"
+    },
+    {
+      "name": "Chlorowoken",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Chlorowoken_(Mutation)"
+    },
+    {
+      "name": "Chocolate",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Chocolate_(Mutation)"
+    },
+    {
+      "name": "Clover",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Shamrock Rod",
+          "chance_percent": 10,
+          "note": ""
+        },
+        {
+          "rod": "Clover Rod",
+          "chance_percent": 1,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Clover_(Mutation)"
+    },
+    {
+      "name": "Colossal Ink",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Colossal_Ink_(Mutation)"
+    },
+    {
+      "name": "Coral",
+      "value_multiplier": 1.8,
+      "rarity_tier": "Unusual",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Coral Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Coral_(Mutation)"
+    },
+    {
+      "name": "Corvid",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Corvid_(Mutation)"
+    },
+    {
+      "name": "Cracked",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Blazebringer Rod",
+          "chance_percent": 5,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Cracked_(Mutation)"
+    },
+    {
+      "name": "Crimson",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Scarlet Spincaster Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Crimson_(Mutation)"
+    },
+    {
+      "name": "Crystalized",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Crystalized Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Crystalized_(Mutation)"
+    },
+    {
+      "name": "Cursed",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Cursed_(Mutation)"
+    },
+    {
+      "name": "Cursed Touch",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Great Dreamer Rod's passive",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Cursed_Touch_(Mutation)"
+    },
+    {
+      "name": "Darkened",
+      "value_multiplier": 1.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Depthseeker Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Noir Enchantment",
+          "chance_percent": 50
+        }
+      ],
+      "enchanting_percent": 50,
+      "wiki_url": "https://fischipedia.org/wiki/Darkened_(Mutation)"
+    },
+    {
+      "name": "Darkness",
+      "value_multiplier": 9.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Darkness_(Mutation)"
+    },
+    {
+      "name": "Decayed",
+      "value_multiplier": 0.45,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Decayed Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Decayed_(Mutation)"
+    },
+    {
+      "name": "Dirty",
+      "value_multiplier": 0.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Dirty_(Mutation)"
+    },
+    {
+      "name": "Distraught",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Distraught_(Mutation)"
+    },
+    {
+      "name": "Diurnal",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Diurnal_(Mutation)"
+    },
+    {
+      "name": "Doomsday",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Doomsday_(Mutation)"
+    },
+    {
+      "name": "Dreaming",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Dreaming_(Mutation)"
+    },
+    {
+      "name": "Easter",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Egg Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Easter_(Mutation)"
+    },
+    {
+      "name": "Eerie",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Spooky Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Eerie Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Eerie_(Mutation)"
+    },
+    {
+      "name": "Electric",
+      "value_multiplier": 2.1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Storming Enchantment",
+          "chance_percent": 25
+        }
+      ],
+      "enchanting_percent": 25,
+      "rod_sources": [
+        {
+          "rod": "Tempest Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Electric_(Mutation)"
+    },
+    {
+      "name": "Electric Shock",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fishing in Zeus Rod's",
+          "chance_percent": 90,
+          "note": "\"Thunderstorm\" ability"
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Electric_Shock_(Mutation)"
+    },
+    {
+      "name": "Ember",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Blazebringer Rod",
+          "chance_percent": 20,
+          "note": ""
+        },
+        {
+          "rod": "Magma Rod",
+          "chance_percent": 35,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Ember_(Mutation)"
+    },
+    {
+      "name": "Emberflame",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Blazebringer Rod",
+          "chance_percent": 5,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Emberflame_(Mutation)"
+    },
+    {
+      "name": "Embraced",
+      "value_multiplier": 9.1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Embraced_(Mutation)"
+    },
+    {
+      "name": "Evil",
+      "value_multiplier": 6.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Evil_(Mutation)"
+    },
+    {
+      "name": "Exploded",
+      "value_multiplier": 0.1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Exploded_(Mutation)"
+    },
+    {
+      "name": "Fabulous",
+      "value_multiplier": 9.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fabulous Rod",
+          "chance_percent": 26,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Fabulous_(Mutation)"
+    },
+    {
+      "name": "Fallen",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fallen Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Fallen_(Mutation)"
+    },
+    {
+      "name": "Female",
+      "value_multiplier": 1.19,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Female_(Mutation)"
+    },
+    {
+      "name": "Festive",
+      "value_multiplier": 2.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Candy Cane Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Festive_(Mutation)"
+    },
+    {
+      "name": "Firework",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Firework Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Firework_(Mutation)"
+    },
+    {
+      "name": "Fixer",
+      "value_multiplier": 1.25,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fixer's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Fixer_(Mutation)"
+    },
+    {
+      "name": "Flora",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Flora_(Mutation)"
+    },
+    {
+      "name": "Floral",
+      "value_multiplier": 8.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Gardenkeeper Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Floral_(Mutation)"
+    },
+    {
+      "name": "Forest Spirit",
+      "value_multiplier": 7.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Forest_Spirit_(Mutation)"
+    },
+    {
+      "name": "Forgotten",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Forgotten_(Mutation)"
+    },
+    {
+      "name": "Fortune",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Fortune_(Mutation)"
+    },
+    {
+      "name": "Fossilized",
+      "value_multiplier": 3.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Voyager Rod",
+          "chance_percent": 35,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Fossilized_(Mutation)"
+    },
+    {
+      "name": "Fragmented",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Fragmented_(Mutation)"
+    },
+    {
+      "name": "Frightful",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Spooky Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Frightful Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Frightful_(Mutation)"
+    },
+    {
+      "name": "Frostbitten",
+      "value_multiplier": 9,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Frostbitten_(Mutation)"
+    },
+    {
+      "name": "Frostnova",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Frostnova_(Mutation)"
+    },
+    {
+      "name": "Fungal",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Fungal Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Fungal_(Mutation)"
+    },
+    {
+      "name": "Galactic",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Galactic_(Mutation)"
+    },
+    {
+      "name": "Galaxy",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Galaxy_(Mutation)"
+    },
+    {
+      "name": "Gemstone",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Treasure Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Gemstone_(Mutation)"
+    },
+    {
+      "name": "Ghastly",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Haunted Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Ghastly_(Mutation)"
+    },
+    {
+      "name": "Gingerbread",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Gingerbread Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Gingerbread Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Gingerbread_(Mutation)"
+    },
+    {
+      "name": "Glacial",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Frostbane Rod",
+          "chance_percent": 1,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Glacial_(Mutation)"
+    },
+    {
+      "name": "Gleebous",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Gleebous_(Mutation)"
+    },
+    {
+      "name": "Glossy",
+      "value_multiplier": 1.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Glossy_(Mutation)"
+    },
+    {
+      "name": "Glowy",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Glowy_(Mutation)"
+    },
+    {
+      "name": "Glyphed",
+      "value_multiplier": 5.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Pen Rod",
+          "chance_percent": 52,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Glyphed_(Mutation)"
+    },
+    {
+      "name": "Golden",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Golden_(Mutation)"
+    },
+    {
+      "name": "Gravy",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Cornucopia Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Gravy_(Mutation)"
+    },
+    {
+      "name": "Greedy",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Scurvy Rod",
+          "chance_percent": 16,
+          "note": ""
+        },
+        {
+          "rod": "Dead Man's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Greedy_(Mutation)"
+    },
+    {
+      "name": "Green",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Green_(Mutation)"
+    },
+    {
+      "name": "Green Leaf",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Verdant Shear Rod",
+          "chance_percent": 33.3,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Green_Leaf_(Mutation)"
+    },
+    {
+      "name": "Harmonized",
+      "value_multiplier": 4.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Harmonized_(Mutation)"
+    },
+    {
+      "name": "Haunted",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Haunted_(Mutation)"
+    },
+    {
+      "name": "Heartburst",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Heartburst_(Mutation)"
+    },
+    {
+      "name": "Heavenly",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Heaven's Rod",
+          "chance_percent": 35,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Heavenly_(Mutation)"
+    },
+    {
+      "name": "Hexed",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "No-Life Rod",
+          "chance_percent": 50,
+          "note": ","
+        },
+        {
+          "rod": "Original No-Life Rod",
+          "chance_percent": 20,
+          "note": ","
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Hexed_(Mutation)"
+    },
+    {
+      "name": "Honey",
+      "value_multiplier": 2.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Honey_(Mutation)"
+    },
+    {
+      "name": "Honked",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Silly Fun Happy Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Honked_(Mutation)"
+    },
+    {
+      "name": "Husk",
+      "value_multiplier": 0.15,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Husk_(Mutation)"
+    },
+    {
+      "name": "Igneous",
+      "value_multiplier": 8.65,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Igneous_(Mutation)"
+    },
+    {
+      "name": "Jack's Curse",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Jack's_Curse_(Mutation)"
+    },
+    {
+      "name": "Jackpot",
+      "value_multiplier": 7.77,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Random Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Jackpot_(Mutation)"
+    },
+    {
+      "name": "Jingle Bell",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Jinglestar Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Jingle_Bell_(Mutation)"
+    },
+    {
+      "name": "Jolly",
+      "value_multiplier": 2.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Antler Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Jolly_(Mutation)"
+    },
+    {
+      "name": "King's Blessing",
+      "value_multiplier": 5.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Poseidon Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/King's_Blessing_(Mutation)"
+    },
+    {
+      "name": "Levitas",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Levitas_(Mutation)"
+    },
+    {
+      "name": "Lightened",
+      "value_multiplier": 1.01,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Lightened_(Mutation)"
+    },
+    {
+      "name": "Lightning",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Test Rod",
+          "chance_percent": 5,
+          "note": ""
+        },
+        {
+          "rod": "Fished up during a Zeus Storm in Zeus's Rod Room",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Lightning_(Mutation)"
+    },
+    {
+      "name": "Lobster",
+      "value_multiplier": 5,
+      "rarity_tier": "Common",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Lobster Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Lobster_(Mutation)"
+    },
+    {
+      "name": "Lost",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "The Lost Rod",
+          "chance_percent": 36,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Lost_(Mutation)"
+    },
+    {
+      "name": "Lovely",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Lovely_(Mutation)"
+    },
+    {
+      "name": "Lovestruck",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Lovestruck_(Mutation)"
+    },
+    {
+      "name": "Lucid",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Lucid Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Lucid_(Mutation)"
+    },
+    {
+      "name": "Lucky Gold",
+      "value_multiplier": 6.14,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Lucky_Gold_(Mutation)"
+    },
+    {
+      "name": "Luminescent",
+      "value_multiplier": 6.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Luminescent_(Mutation)"
+    },
+    {
+      "name": "Lumpy",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Lumpy_(Mutation)"
+    },
+    {
+      "name": "Lunar",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Astral Rod",
+          "chance_percent": 5,
+          "note": ""
+        },
+        {
+          "rod": "Event Horizon Rod",
+          "chance_percent": 5,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Lunar_(Mutation)"
+    },
+    {
+      "name": "Lustrous",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Lustrous_(Mutation)"
+    },
+    {
+      "name": "Mace",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mace_(Mutation)"
+    },
+    {
+      "name": "Madness",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Madness_(Mutation)"
+    },
+    {
+      "name": "Magical",
+      "value_multiplier": 7.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Magical_(Mutation)"
+    },
+    {
+      "name": "Mango",
+      "value_multiplier": 7,
+      "rarity_tier": "Special",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mango_(Mutation)"
+    },
+    {
+      "name": "Marshmallow",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Marshmallow_(Mutation)"
+    },
+    {
+      "name": "Mastered",
+      "value_multiplier": 9,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mastered_(Mutation)"
+    },
+    {
+      "name": "Mayhem",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mayhem_(Mutation)"
+    },
+    {
+      "name": "Merry",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Christmas Tree Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Merry Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Merry_(Mutation)"
+    },
+    {
+      "name": "Mesmerized",
+      "value_multiplier": 3.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "MiguRod's additional catch passive",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Mesmerized_(Mutation)"
+    },
+    {
+      "name": "Midas",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Midas Rod",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Midas_(Mutation)"
+    },
+    {
+      "name": "Minty",
+      "value_multiplier": 3.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Minty_(Mutation)"
+    },
+    {
+      "name": "Mission Specialist",
+      "value_multiplier": 1.25,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Mission Specialist's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Mission_Specialist_(Mutation)"
+    },
+    {
+      "name": "Moon-Kissed",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Moon-Kissed_(Mutation)"
+    },
+    {
+      "name": "Mosaic",
+      "value_multiplier": 1.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mosaic_(Mutation)"
+    },
+    {
+      "name": "Mossy",
+      "value_multiplier": 8.7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mossy_(Mutation)"
+    },
+    {
+      "name": "Mother Nature",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Verdant Shear Rod",
+          "chance_percent": 33.3,
+          "note": ""
+        },
+        {
+          "rod": "Wildflower Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Mother_Nature_(Mutation)"
+    },
+    {
+      "name": "Mourned",
+      "value_multiplier": 7.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Mourned_(Mutation)"
+    },
+    {
+      "name": "Mythical",
+      "value_multiplier": 5.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Mythical Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Mythical_(Mutation)"
+    },
+    {
+      "name": "Necrotic",
+      "value_multiplier": 7.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Necrotic Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Necrotic_(Mutation)"
+    },
+    {
+      "name": "Negative",
+      "value_multiplier": 1.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Negative_(Mutation)"
+    },
+    {
+      "name": "Neon",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Neon_(Mutation)"
+    },
+    {
+      "name": "New Years",
+      "value_multiplier": 2.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "New Years Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/New_Years_(Mutation)"
+    },
+    {
+      "name": "Nico's Nyantics",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Nico's_Nyantics_(Mutation)"
+    },
+    {
+      "name": "Nightmare",
+      "value_multiplier": 8.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Dusekkar Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Nightmare_(Mutation)"
+    },
+    {
+      "name": "Noctic",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Noctic_(Mutation)"
+    },
+    {
+      "name": "Nocturnal",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Nocturnal_(Mutation)"
+    },
+    {
+      "name": "Nova",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Cerulean Fang Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Nova_(Mutation)"
+    },
+    {
+      "name": "Noxious",
+      "value_multiplier": 0.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Toxinburst Rod",
+          "chance_percent": 35,
+          "note": ""
+        },
+        {
+          "rod": "Toxinburst Rod's passive",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Noxious_(Mutation)"
+    },
+    {
+      "name": "Nuclear",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Nuclear_(Mutation)"
+    },
+    {
+      "name": "Nullified",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Nullified_(Mutation)"
+    },
+    {
+      "name": "Oak",
+      "value_multiplier": 2.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Oak_(Mutation)"
+    },
+    {
+      "name": "Oblivion",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Oblivion_(Mutation)"
+    },
+    {
+      "name": "Obsidian",
+      "value_multiplier": 8.3,
+      "rarity_tier": "Special",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Obsidian_(Mutation)"
+    },
+    {
+      "name": "Ocean's Ruin",
+      "value_multiplier": 10.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Ocean's_Ruin_(Mutation)"
+    },
+    {
+      "name": "Oscar",
+      "value_multiplier": 6.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Great Rod of Oscar",
+          "chance_percent": 5,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Oscar_(Mutation)"
+    },
+    {
+      "name": "Paleontologist",
+      "value_multiplier": 1.25,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Paleontologist's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Paleontologist_(Mutation)"
+    },
+    {
+      "name": "Patriotic",
+      "value_multiplier": 7.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Patriot Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Patriotic_(Mutation)"
+    },
+    {
+      "name": "Peppermint",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Peppermint Rod",
+          "chance_percent": 25,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Peppermint Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Peppermint_(Mutation)"
+    },
+    {
+      "name": "Permafrost",
+      "value_multiplier": 9.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Permafrost_(Mutation)"
+    },
+    {
+      "name": "Pink",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Pink_(Mutation)"
+    },
+    {
+      "name": "Plagued",
+      "value_multiplier": 10,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Plagued_(Mutation)"
+    },
+    {
+      "name": "Poisoned",
+      "value_multiplier": 0.9,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Poisoned_(Mutation)"
+    },
+    {
+      "name": "Popsicle",
+      "value_multiplier": 8.16,
+      "rarity_tier": "Limited",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Popsicle Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Popsicle_(Mutation)"
+    },
+    {
+      "name": "Prismize",
+      "value_multiplier": 5.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Ethereal Prism Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Prismize_(Mutation)"
+    },
+    {
+      "name": "Purified",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Insight Enchantment",
+          "chance_percent": 30
+        }
+      ],
+      "enchanting_percent": 30,
+      "wiki_url": "https://fischipedia.org/wiki/Purified_(Mutation)"
+    },
+    {
+      "name": "Puritas",
+      "value_multiplier": 8.7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Puritas_(Mutation)"
+    },
+    {
+      "name": "Putrid",
+      "value_multiplier": 0.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Putrid Enchantment",
+          "chance_percent": 2
+        }
+      ],
+      "enchanting_percent": 2,
+      "wiki_url": "https://fischipedia.org/wiki/Putrid_(Mutation)"
+    },
+    {
+      "name": "Quiet",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Quiet_(Mutation)"
+    },
+    {
+      "name": "Radiant",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Radiant_(Mutation)"
+    },
+    {
+      "name": "Rainbow",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Rainbow_(Mutation)"
+    },
+    {
+      "name": "Rainbow Cluster",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Rainbow Cluster Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Rainbow_Cluster_(Mutation)"
+    },
+    {
+      "name": "Red",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Red_(Mutation)"
+    },
+    {
+      "name": "Requies",
+      "value_multiplier": 9.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Requies_(Mutation)"
+    },
+    {
+      "name": "Revitalized",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Revitalized_(Mutation)"
+    },
+    {
+      "name": "Rockstar",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Rockstar_(Mutation)"
+    },
+    {
+      "name": "Rooted",
+      "value_multiplier": 0.66,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Rooted_(Mutation)"
+    },
+    {
+      "name": "Rose",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Rose Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Rose_(Mutation)"
+    },
+    {
+      "name": "Rotting",
+      "value_multiplier": 0.7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Rotting_(Mutation)"
+    },
+    {
+      "name": "Royal",
+      "value_multiplier": 9.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Royal_(Mutation)"
+    },
+    {
+      "name": "Rusty",
+      "value_multiplier": 0.7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Rusty_(Mutation)"
+    },
+    {
+      "name": "Sacratus",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Sacratus_(Mutation)"
+    },
+    {
+      "name": "Sandy",
+      "value_multiplier": 1.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Pharaohs Curse Enchantment",
+          "chance_percent": 25
+        }
+      ],
+      "enchanting_percent": 25,
+      "wiki_url": "https://fischipedia.org/wiki/Sandy_(Mutation)"
+    },
+    {
+      "name": "Sanguine",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Sanguine_(Mutation)"
+    },
+    {
+      "name": "Santa",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Santa's Miracle Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Santa_(Mutation)"
+    },
+    {
+      "name": "Scorched",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Phoenix Rod",
+          "chance_percent": 40,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Scorched_(Mutation)"
+    },
+    {
+      "name": "Seasonal",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Seasons Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Seasonal_(Mutation)"
+    },
+    {
+      "name": "Serene",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Serene_(Mutation)"
+    },
+    {
+      "name": "Shrouded",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Shrouded_(Mutation)"
+    },
+    {
+      "name": "Silver",
+      "value_multiplier": 1.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Silver_(Mutation)"
+    },
+    {
+      "name": "Sinister",
+      "value_multiplier": 2.9,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Haunted Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Sinister_(Mutation)"
+    },
+    {
+      "name": "Siren's Spite",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Siren's_Spite_(Mutation)"
+    },
+    {
+      "name": "Sizes",
+      "value_multiplier": 1.19,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Sizes_(Mutation)"
+    },
+    {
+      "name": "Skrunkly",
+      "value_multiplier": 2.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Skrunkly_(Mutation)"
+    },
+    {
+      "name": "Sleet",
+      "value_multiplier": 2.4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Avalanche Rod",
+          "chance_percent": 25,
+          "note": ""
+        },
+        {
+          "rod": "Summit Rod",
+          "chance_percent": 20,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Sleet_(Mutation)"
+    },
+    {
+      "name": "Smurf",
+      "value_multiplier": 2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Smurf Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Smurf_(Mutation)"
+    },
+    {
+      "name": "Snowy",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Snowy_(Mutation)"
+    },
+    {
+      "name": "Solar",
+      "value_multiplier": 5.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Daybreaker Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Solar_(Mutation)"
+    },
+    {
+      "name": "Solarblaze",
+      "value_multiplier": 3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Wicked Fang Rod",
+          "chance_percent": 30,
+          "note": ""
+        },
+        {
+          "rod": "Phoenix Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Solarblaze_(Mutation)"
+    },
+    {
+      "name": "Soulless",
+      "value_multiplier": 0.66,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Soulless_(Mutation)"
+    },
+    {
+      "name": "Sparkling",
+      "value_multiplier": 1.85,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Sparkling_(Mutation)"
+    },
+    {
+      "name": "Spectral",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Spectral_(Mutation)"
+    },
+    {
+      "name": "Spicy",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Spicy_(Mutation)"
+    },
+    {
+      "name": "Spirit",
+      "value_multiplier": 5.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Tranquility Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Spirit_(Mutation)"
+    },
+    {
+      "name": "Spooky",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Spooky Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "enchanting_sources": [
+        {
+          "enchantment": "Spooky Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Spooky_(Mutation)"
+    },
+    {
+      "name": "Stardust",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Astralhook Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Stardust_(Mutation)"
+    },
+    {
+      "name": "Studded",
+      "value_multiplier": 1.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Brick Rod",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Studded_(Mutation)"
+    },
+    {
+      "name": "Subspace",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Quantum Enchantment",
+          "chance_percent": 25
+        }
+      ],
+      "enchanting_percent": 25,
+      "wiki_url": "https://fischipedia.org/wiki/Subspace_(Mutation)"
+    },
+    {
+      "name": "Summer",
+      "value_multiplier": 6.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Tidal Wave Rod",
+          "chance_percent": 5,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Summer_(Mutation)"
+    },
+    {
+      "name": "Sunken",
+      "value_multiplier": 6.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Sunken Rod",
+          "chance_percent": 8,
+          "note": ""
+        },
+        {
+          "rod": "Dead Man's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Sunken_(Mutation)"
+    },
+    {
+      "name": "Supersonic",
+      "value_multiplier": 8.01,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "MiguRod",
+          "chance_percent": 40.1,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Supersonic_(Mutation)"
+    },
+    {
+      "name": "Surreal",
+      "value_multiplier": 1.19,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Surreal_(Mutation)"
+    },
+    {
+      "name": "Sweet",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Cupid Enchantment",
+          "chance_percent": 10
+        }
+      ],
+      "enchanting_percent": 10,
+      "wiki_url": "https://fischipedia.org/wiki/Sweet_(Mutation)"
+    },
+    {
+      "name": "Tainted",
+      "value_multiplier": 6.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Tainted_(Mutation)"
+    },
+    {
+      "name": "Tentacle Surge",
+      "value_multiplier": 7.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Kraken Rod",
+          "chance_percent": 10,
+          "note": ""
+        },
+        {
+          "rod": "Dead Man's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Tentacle_Surge_(Mutation)"
+    },
+    {
+      "name": "Tidal",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Tidal_(Mutation)"
+    },
+    {
+      "name": "Tormented",
+      "value_multiplier": 6.66,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Tormented_(Mutation)"
+    },
+    {
+      "name": "Toxic",
+      "value_multiplier": 6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Toxic Spire Rod",
+          "chance_percent": 15,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Toxic_(Mutation)"
+    },
+    {
+      "name": "Translucent",
+      "value_multiplier": 1.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "enchanting_sources": [
+        {
+          "enchantment": "Ghastly Enchantment",
+          "chance_percent": 100
+        }
+      ],
+      "enchanting_percent": 100,
+      "wiki_url": "https://fischipedia.org/wiki/Translucent_(Mutation)"
+    },
+    {
+      "name": "Tryhard",
+      "value_multiplier": 10,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Tryhard Rod",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Tryhard_(Mutation)"
+    },
+    {
+      "name": "Umbra",
+      "value_multiplier": 9,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Umbra_(Mutation)"
+    },
+    {
+      "name": "Unlucky",
+      "value_multiplier": 0.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Random Rod",
+          "chance_percent": 50,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Unlucky_(Mutation)"
+    },
+    {
+      "name": "Unsellable",
+      "value_multiplier": 1.19,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Unsellable_(Mutation)"
+    },
+    {
+      "name": "Upside-Down",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Upside-Down Rod",
+          "chance_percent": 100,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Upside-Down_(Mutation)"
+    },
+    {
+      "name": "Venomous",
+      "value_multiplier": 6.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Venomous_(Mutation)"
+    },
+    {
+      "name": "Verdant",
+      "value_multiplier": 9.2,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Verdant_(Mutation)"
+    },
+    {
+      "name": "Vined",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Vineweaver Rod",
+          "chance_percent": 30,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Vined_(Mutation)"
+    },
+    {
+      "name": "Vitalic",
+      "value_multiplier": 8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Vitalic_(Mutation)"
+    },
+    {
+      "name": "Wicked",
+      "value_multiplier": 6.6,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Wicked_(Mutation)"
+    },
+    {
+      "name": "Wisp",
+      "value_multiplier": 5.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Wisp_(Mutation)"
+    },
+    {
+      "name": "Withered",
+      "value_multiplier": 9.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Withered_(Mutation)"
+    },
+    {
+      "name": "Wrath",
+      "value_multiplier": 4.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "rod_sources": [
+        {
+          "rod": "Dead Man's Rod",
+          "chance_percent": 10,
+          "note": ""
+        }
+      ],
+      "wiki_url": "https://fischipedia.org/wiki/Wrath_(Mutation)"
+    },
+    {
+      "name": "Yellow",
+      "value_multiplier": 1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Yellow_(Mutation)"
+    },
+    {
+      "name": "Bellona's Fury",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Bellona's_Fury_(Mutation)"
+    },
+    {
+      "name": "Bouka",
+      "value_multiplier": 8.01,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Bouka_(Mutation)",
+      "rod_sources": [
+        {
+          "rod": "MiguRod",
+          "chance_percent": 40.1,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Cragged",
+      "value_multiplier": 7,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Cragged_(Mutation)"
+    },
+    {
+      "name": "Gravitas",
+      "value_multiplier": 9.81,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Gravitas_(Mutation)"
+    },
+    {
+      "name": "Hades' Curse",
+      "value_multiplier": 11.1,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Hades'_Curse_(Mutation)"
+    },
+    {
+      "name": "Hades' Infliction",
+      "value_multiplier": 4,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Hades'_Infliction_(Mutation)"
+    },
+    {
+      "name": "Idol",
+      "value_multiplier": 8.01,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Idol_(Mutation)",
+      "rod_sources": [
+        {
+          "rod": "MiguRod",
+          "chance_percent": 40.1,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Olympian",
+      "value_multiplier": 10,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Olympian_(Mutation)"
+    },
+    {
+      "name": "Olympian Infliction",
+      "value_multiplier": 5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Olympian_Infliction_(Mutation)"
+    },
+    {
+      "name": "Poseidon's Blessing",
+      "value_multiplier": 9.55,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Poseidon's_Blessing_(Mutation)"
+    },
+    {
+      "name": "Poseidon's Infliction",
+      "value_multiplier": 3.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Poseidon's_Infliction_(Mutation)"
+    },
+    {
+      "name": "Soultouched",
+      "value_multiplier": 7.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Soultouched_(Mutation)"
+    },
+    {
+      "name": "Sunlit",
+      "value_multiplier": 6.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Sunlit_(Mutation)"
+    },
+    {
+      "name": "Tidal Surge",
+      "value_multiplier": 8.5,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Tidal_Surge_(Mutation)"
+    },
+    {
+      "name": "Zeus's Infliction",
+      "value_multiplier": 3.8,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Zeus's_Infliction_(Mutation)"
+    },
+    {
+      "name": "Zeus's Storm",
+      "value_multiplier": 9.3,
+      "rarity_tier": "Legendary",
+      "visual_effect": "wiki-import",
+      "wiki_url": "https://fischipedia.org/wiki/Zeus's_Storm_(Mutation)"
+    }
+  ]
+}
