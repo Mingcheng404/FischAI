@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const dataPath = path.join(projectRoot, "public", "data.json");
+const totemsPath = path.join(projectRoot, "public", "totems.json");
 const mutationsPath = path.join(projectRoot, "public", "mutations.json");
 
 function slugify(value) {
@@ -965,11 +966,13 @@ function normalizeDataRecords(data) {
     wiki_url: mutation.wiki_url || wikiUrlFromTitle(`${mutation.name} (Mutation)`),
   }));
 
-  data.totems = (data.totems || []).map((totem) => ({
-    ...totem,
-    source: totem.source || "Official Fisch Wiki",
-    wiki_url: totem.wiki_url || wikiUrlFromTitle(totem.name),
-  }));
+  if (Object.prototype.hasOwnProperty.call(data, "totems")) {
+    data.totems = (data.totems || []).map((totem) => ({
+      ...totem,
+      source: totem.source || "Official Fisch Wiki",
+      wiki_url: totem.wiki_url || wikiUrlFromTitle(totem.name),
+    }));
+  }
 }
 
 function estimateTotemMultiplier(effectText) {
@@ -1056,13 +1059,29 @@ async function run() {
   data.islands = enrichedIslands.islands;
   const enrichedMutations = await enrichMutationsFromWiki(data.mutations);
   data.mutations = enrichedMutations.mutations;
-  if (wikiTotems.length) {
-    data.totems = wikiTotems;
-  } else if (Array.isArray(data.totems) && data.totems.length > 1) {
-    // Keep curated totems from totem-wiki-seed / manual edits if wiki table yields none
-  } else {
-    data.totems = [{ id: "none", name: "No Totem", effect: "No special event", earnings_multiplier: 1 }];
+
+  let totemsFromFileCount = 0;
+  try {
+    const totemRaw = await fs.readFile(totemsPath, "utf8");
+    const totemDoc = JSON.parse(totemRaw);
+    if (Array.isArray(totemDoc.totems) && totemDoc.totems.length > 0) {
+      totemsFromFileCount = totemDoc.totems.length;
+      delete data.totems;
+    }
+  } catch {
+    // public/totems.json missing — keep legacy behaviour below
   }
+
+  if (!totemsFromFileCount) {
+    if (wikiTotems.length) {
+      data.totems = wikiTotems;
+    } else if (Array.isArray(data.totems) && data.totems.length > 1) {
+      // Keep existing data.totems if wiki table yields none
+    } else {
+      data.totems = [{ id: "none", name: "No Totem", effect: "No special event", earnings_multiplier: 1 }];
+    }
+  }
+
   normalizeDataRecords(data);
 
   mutationDoc.mutations = [...(data.mutations || [])];
@@ -1074,7 +1093,7 @@ async function run() {
       fish: fishTitles.length || data.fish.length || 0,
       mutations: mutationTitles.length || data.mutations.length || 0,
       islands: islandTitles.length || data.islands.length || 0,
-      totems: (data.totems || []).length,
+      totems: totemsFromFileCount || (data.totems || []).length,
     },
     rod_pages_updated: enrichedRods.updated,
     fish_pages_updated: enrichedFish.updated,
