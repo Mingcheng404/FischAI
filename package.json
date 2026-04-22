@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sync:data": "node ./scripts/sync-fisch-data.mjs"
+    "sync:data": "node ./scripts/sync-fisch-data.mjs",
+    "seed:totems": "node ./scripts/totem-wiki-seed.mjs"
   },
   "dependencies": {
     "react": "19.2.4",
