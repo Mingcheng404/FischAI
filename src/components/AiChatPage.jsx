@@ -468,7 +468,8 @@ function buildAiContext(data, query) {
   const context = {
     source: "local_fisch_database",
     instructions_for_model: [
-      "Use total_counts for any database size/count statements.",
+      "Use total_counts for any database size/count statements (including total_counts.totems for totems).",
+      "Never infer totem count from a single 'No Totem' row; use total_counts.totems and relevant.totems.",
       "Do not claim that relevant arrays are the full database.",
       "If user asks for all mutations, state the total using total_counts.mutations and provide representative entries from relevant.mutations unless explicitly asked for exhaustive list.",
     ],
@@ -742,6 +743,8 @@ export default function AiChatPage() {
       rods: asArray(data?.rods).length,
       fish: asArray(data?.fish).length,
       mutations: asArray(data?.mutations).length,
+      islands: asArray(data?.islands).length,
+      totems: asArray(data?.totems).length,
     };
   }, [data]);
 
@@ -947,3 +950,4 @@ export default function AiChatPage() {
     </section>
   );
 }
+
