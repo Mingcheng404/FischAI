@@ -471,7 +471,7 @@ function buildAiContext(data, query) {
   const context = {
     source: "local_fisch_database",
     instructions_for_model: [
-      "Repository scripts (e.g. totem-wiki-seed.mjs) are not in this context. Only fields below (from public/data.json) exist.",
+      "Repository scripts are not in this context. Totem rows come from public/totems.json (merged at load); other game data from public/data.json.",
       "For totem counts, use total_counts.totems; it must match totem_names_all.length. List real totem names from totem_names_all and relevant.totems.",
       "Never infer totem data from a single 'No Totem' row; the full set is in totem_names_all.",
       "Do not claim that relevant arrays are the full database except where total_counts is explicit.",
@@ -716,12 +716,17 @@ export default function AiChatPage() {
     setLoading(true);
     Promise.all([
       fetch(`${import.meta.env.BASE_URL}data.json`).then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}totems.json`)
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null),
       fetch(`${import.meta.env.BASE_URL}mutations.json`).then((r) => r.json()),
     ])
-      .then(([main, mut]) => {
+      .then(([main, totemDoc, mut]) => {
         if (cancelled) return;
+        const fromFile = asArray(totemDoc?.totems);
         const merged = {
           ...(main || {}),
+          totems: fromFile.length > 0 ? fromFile : asArray(main?.totems),
           mutations: asArray(mut?.mutations),
         };
         setData(merged);
@@ -963,4 +968,5 @@ export default function AiChatPage() {
     </section>
   );
 }
+
 
