@@ -183,7 +183,10 @@ function relevantMutations(mutations, queryLower) {
 }
 
 function buildDeterministicCountReply(queryLower, data, t) {
-  const asksCount = /(how many|count|total|number of)/i.test(queryLower);
+  const asksCount =
+    /(how many|count|total|number of|how much|what is the (?:total|count|number)|how many (?:\w+ )*can you see)/i.test(
+      queryLower
+    ) || /(多少|幾個|幾个|共有)/i.test(queryLower);
   if (!asksCount) return null;
 
   const counts = {
@@ -774,6 +777,14 @@ export default function AiChatPage() {
     if (funCommand) {
       if (funCommand.charts) setCharts(funCommand.charts);
       setMessages((prev) => prev.map((msg) => (msg.id === assistantId ? { ...msg, content: funCommand.reply } : msg)));
+      return;
+    }
+
+    const queryLower = text.toLowerCase();
+    const deterministicCount = buildDeterministicCountReply(queryLower, data, t);
+    if (deterministicCount) {
+      setCharts([]);
+      setMessages((prev) => prev.map((msg) => (msg.id === assistantId ? { ...msg, content: deterministicCount } : msg)));
       return;
     }
 
