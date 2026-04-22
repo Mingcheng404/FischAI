@@ -35,6 +35,7 @@ function ChevronIcon({ open }) {
 }
 
 export default function SearchBar({ selectedMutation, onMutationSelect }) {
+  const baseUrl = import.meta.env.BASE_URL || "/";
   const [query, setQuery] = useState("");
   const [mutations, setMutations] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -55,7 +56,7 @@ export default function SearchBar({ selectedMutation, onMutationSelect }) {
     setError(null);
 
     const loadMutations = () =>
-      fetch("/mutations.json")
+      fetch(`${baseUrl}mutations.json`)
         .then((r) => r.json())
         .then((json) => {
           const list = Array.isArray(json?.mutations) ? json.mutations : [];
@@ -66,7 +67,7 @@ export default function SearchBar({ selectedMutation, onMutationSelect }) {
     loadMutations()
       .then((list) => {
         if (list) return list;
-        return fetch("/data.json")
+        return fetch(`${baseUrl}data.json`)
           .then((r) => r.json())
           .then((json) => (Array.isArray(json?.mutations) ? json.mutations : []));
       })
@@ -84,7 +85,7 @@ export default function SearchBar({ selectedMutation, onMutationSelect }) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [baseUrl]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -201,3 +202,4 @@ export default function SearchBar({ selectedMutation, onMutationSelect }) {
     </div>
   );
 }
+
