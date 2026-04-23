@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useI18n } from "../i18n.jsx";
 import totemsBundled from "../data/totems.json";
+import { enrichRodsWithMastery, rodHasMasteryTrack } from "../rod/masteryMetadata.js";
 
 const REMOTE_API_URL = import.meta.env.VITE_PROBEX_API_URL || "https://api.probex.top/v1/chat/completions";
 const REMOTE_MODEL = import.meta.env.VITE_PROBEX_MODEL || "deepseek-v3";
@@ -215,7 +216,10 @@ function relevantTotems(totems, queryLower) {
 }
 
 function queryMentionsRodMastery(queryLower) {
-  return /mastery|masteries|grand reward/i.test(queryLower);
+  return (
+    /mastery|masteries|grand reward|golden skin|absolute mastery|mastery track|mastery quest/i.test(queryLower) ||
+    /which rods.*mastery|rods with mastery|rod mastery/i.test(queryLower)
+  );
 }
 
 function relevantRodsForQuery(rods, queryLower) {
@@ -227,6 +231,8 @@ function relevantRodsForQuery(rods, queryLower) {
   if (queryMentionsRodMastery(queryLower)) {
     const withM = list.filter((r) => r?.mastery?.track_available);
     if (withM.length > 0) return withM;
+    const wikiMasteryRods = list.filter((r) => rodHasMasteryTrack(r?.name));
+    if (wikiMasteryRods.length > 0) return wikiMasteryRods;
   }
   return bestRods(list, 5);
 }
@@ -557,6 +563,14 @@ function buildAiContext(data, query) {
   const mutations = asArray(data?.mutations);
   const islands = asArray(data?.islands);
   const totems = asArray(data?.totems);
+  const rodsWithMasteryTrack = rods.filter((r) => r?.mastery?.track_available);
+  const rod_mastery_catalog = rodsWithMasteryTrack.map((r) => ({
+    id: r.id,
+    name: r.name,
+    wiki_url: r.wiki_url,
+    mastery: r.mastery,
+  }));
+
   const rodHit = findBestRodMatch(rods, queryLower);
   const fishHit = findBestItemMatch(fish, queryLower);
   const mutationHit = findBestItemMatch(mutations, queryLower);
@@ -580,15 +594,17 @@ function buildAiContext(data, query) {
       "Never infer totem data from a single 'No Totem' row; the full set is in totem_names_all.",
       "Do not claim that relevant arrays are the full database except where total_counts is explicit.",
       "If user asks for all mutations, state the total using total_counts.mutations and provide representative entries from relevant.mutations unless explicitly asked for exhaustive list.",
-      "For Rod Mastery questions, use relevant.rods[].mastery; when many rods are listed, they are the wiki Rod Mastery set (track_available true). Answer from that data — do not claim missing context unless a field is literally null.",
+      "Rod Mastery: always use `rod_mastery_catalog` for the full wiki Rod Mastery set (same as rods where mastery.track_available). Also check relevant.rods for the user’s focus. Never say mastery data is missing if rod_mastery_catalog is non-empty.",
     ],
     total_counts: {
       rods: rods.length,
+      rods_with_mastery_track: rodsWithMasteryTrack.length,
       fish: fish.length,
       mutations: mutations.length,
       islands: islands.length,
       totems: totems.length,
     },
+    rod_mastery_catalog,
     totem_names_all: totems.map((x) => x?.name).filter(Boolean),
     requested_item: hasSpecificItem
       ? {
@@ -852,6 +868,7 @@ export default function AiChatPage() {
           ...(main || {}),
           totems,
           mutations: asArray(mut?.mutations),
+          rods: enrichRodsWithMastery(main?.rods),
         };
         setData(merged);
         setLoading(false);
