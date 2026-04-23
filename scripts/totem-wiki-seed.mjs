@@ -1,5 +1,6 @@
 /**
  * Totem rows are stored in public/totems.json (canonical).
+ * A copy lives in src/data/totems.json for Vite bundling (public/ is not importable).
  * This script refreshes metadata in public/data.json (imported_counts, notes)
  * so it stays consistent. It does not duplicate totem objects into data.json.
  *
@@ -12,6 +13,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const totemsPath = path.join(projectRoot, "public", "totems.json");
+const totemsBundledPath = path.join(projectRoot, "src", "data", "totems.json");
 const dataPath = path.join(projectRoot, "public", "data.json");
 
 async function main() {
@@ -35,11 +37,14 @@ async function main() {
   }
 
   await fs.writeFile(dataPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
-  console.log(`totems.json: ${totems.length} totems. Updated data.json metadata (totems not embedded).`);
+  await fs.mkdir(path.dirname(totemsBundledPath), { recursive: true });
+  await fs.copyFile(totemsPath, totemsBundledPath);
+  console.log(
+    `totems.json: ${totems.length} totems. Updated data.json metadata; copied to src/data/totems.json for the app bundle.`
+  );
 }
 
 main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-
