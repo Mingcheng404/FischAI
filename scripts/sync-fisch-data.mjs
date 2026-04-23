@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { rodMasteryBlock } from "./rod-mastery-data.mjs";
 
 const WIKI_API = "https://fischipedia.org/w/api.php";
 
@@ -929,14 +930,18 @@ function uniqueStringList(values) {
 }
 
 function normalizeDataRecords(data) {
-  data.rods = (data.rods || []).map((rod) => ({
-    ...rod,
-    wiki_url: rod.wiki_url || wikiUrlFromTitle(rod.name),
-    passive_effect: cleanWikiMarkup(rod.passive_effect || ""),
-    obtain_method: cleanWikiMarkup(rod.obtain_method || "") || (Number(rod.price) > 0 ? "Purchase" : "Unknown"),
-    obtain_location: cleanWikiMarkup(rod.obtain_location || ""),
-    description: rod.description || "Imported from Official Fisch Wiki category data.",
-  }));
+  data.rods = (data.rods || []).map((rod) => {
+    const wiki_url = rod.wiki_url || wikiUrlFromTitle(rod.name);
+    return {
+      ...rod,
+      wiki_url,
+      passive_effect: cleanWikiMarkup(rod.passive_effect || ""),
+      obtain_method: cleanWikiMarkup(rod.obtain_method || "") || (Number(rod.price) > 0 ? "Purchase" : "Unknown"),
+      obtain_location: cleanWikiMarkup(rod.obtain_location || ""),
+      description: rod.description || "Imported from Official Fisch Wiki category data.",
+      mastery: rodMasteryBlock({ name: rod.name, wiki_url }),
+    };
+  });
 
   data.fish = (data.fish || []).map((fish) => {
     const preferredTime = String(fish.preferred_time || "").trim();
