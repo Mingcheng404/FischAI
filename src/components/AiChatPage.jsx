@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useI18n } from "../i18n.jsx";
 import totemsBundled from "../data/totems.json";
 
@@ -781,6 +781,13 @@ export default function AiChatPage() {
   const [charts, setCharts] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [messages, setMessages] = useState([]);
+  const chatScrollRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const el = chatScrollRef.current;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
+  }, [messages]);
 
   useEffect(() => {
     try {
@@ -1007,7 +1014,10 @@ export default function AiChatPage() {
       </div>
 
       <div className="mt-4 rounded-2xl border border-slate-800/80 bg-slate-950/30 p-3">
-        <div className="max-h-[380px] min-h-[240px] space-y-3 overflow-y-auto pr-1">
+        <div
+          ref={chatScrollRef}
+          className="max-h-[380px] min-h-[240px] space-y-3 overflow-y-auto overflow-x-hidden pr-1"
+        >
           {messages.map((msg, idx) => (
             <div
               key={`${msg.role}-${idx}`}
