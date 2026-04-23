@@ -88,6 +88,11 @@ function hasFischSignal(queryLower) {
   );
 }
 
+/** English + Chinese (simplified/traditional) keywords for totem-related questions */
+function mentionsTotems(queryLower) {
+  return /(totem|totems|图腾|圖騰)/i.test(String(queryLower || ""));
+}
+
 function tokenize(value) {
   return String(value || "")
     .toLowerCase()
@@ -182,11 +187,21 @@ function relevantMutations(mutations, queryLower) {
   return all.slice(0, 20);
 }
 
+function relevantTotems(totems, queryLower) {
+  const all = asArray(totems);
+  const matched = findByNameIncludes(all, queryLower, 60);
+  if (matched.length > 0) return matched;
+  if (mentionsTotems(queryLower)) {
+    return all.filter((row) => String(row?.id || "") !== "none").slice(0, 60);
+  }
+  return [];
+}
+
 function buildDeterministicCountReply(queryLower, data, t) {
   const asksCount =
     /(how many|count|total|number of|how much|what is the (?:total|count|number)|how many (?:\w+ )*can you see)/i.test(
       queryLower
-    ) || /(多少|幾個|幾个|共有)/i.test(queryLower);
+    ) || /(多少|幾個|幾个|几个|共有)/i.test(queryLower);
   if (!asksCount) return null;
 
   const counts = {
@@ -201,7 +216,7 @@ function buildDeterministicCountReply(queryLower, data, t) {
   if (/(mutation|mutations)/i.test(queryLower)) return t("aiChat.countMutations", { count: counts.mutations });
   if (/\bfish\b|fishes/i.test(queryLower)) return t("aiChat.countFish", { count: counts.fish });
   if (/(island|islands|location|locations)/i.test(queryLower)) return t("aiChat.countIslands", { count: counts.islands });
-  if (/(totem|totems)/i.test(queryLower)) return t("aiChat.countTotems", { count: counts.totems });
+  if (mentionsTotems(queryLower)) return t("aiChat.countTotems", { count: counts.totems });
 
   return null;
 }
@@ -226,6 +241,15 @@ function normalizeAiReply(rawReply, query, data, t) {
   }
   if (/(mutation|mutations)/i.test(queryLower)) {
     return `${t("aiChat.countMutations", { count: asArray(data?.mutations).length })} ${t("aiChat.askMutationNameHint")}`;
+  }
+  if (mentionsTotems(queryLower)) {
+    return t("aiChat.countTotems", { count: asArray(data?.totems).length });
+  }
+  if (/\bfish\b|fishes/i.test(queryLower)) {
+    return t("aiChat.countFish", { count: asArray(data?.fish).length });
+  }
+  if (/(island|islands|location|locations)/i.test(queryLower)) {
+    return t("aiChat.countIslands", { count: asArray(data?.islands).length });
   }
   return text
     .replace(/not (?:provided|available) in this context/gi, t("aiChat.noInternalContextWording"))
@@ -554,9 +578,9 @@ function buildAiContext(data, query) {
           ? totemHit
             ? [totemHit]
             : []
-          : findByNameIncludes(totems, queryLower),
+          : relevantTotems(totems, queryLower),
         ["name", "effect", "earnings_multiplier", "price_c$", "obtainability", "wiki_url"],
-        5
+        12
       ),
     },
   };
