@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
 import { useI18n } from "../i18n.jsx";
+import totemsBundled from "../../public/totems.json";
 
 const REMOTE_API_URL = import.meta.env.VITE_PROBEX_API_URL || "https://api.probex.top/v1/chat/completions";
 const REMOTE_MODEL = import.meta.env.VITE_PROBEX_MODEL || "deepseek-v3";
@@ -15,6 +16,22 @@ const CHAT_STORAGE_KEY = "fisch_ai_chat_history_v1";
 
 function asArray(value) {
   return Array.isArray(value) ? value : [];
+}
+
+function totemsArrayFromDoc(doc) {
+  if (doc == null) return [];
+  if (Array.isArray(doc)) return doc;
+  if (typeof doc === "object" && Array.isArray(doc.totems)) return doc.totems;
+  return [];
+}
+
+function pickLongestArray(...candidates) {
+  let best = [];
+  for (const cur of candidates) {
+    const arr = asArray(cur);
+    if (arr.length > best.length) best = arr;
+  }
+  return best;
 }
 
 function number(value, fallback = 0) {
@@ -747,10 +764,13 @@ export default function AiChatPage() {
     ])
       .then(([main, totemDoc, mut]) => {
         if (cancelled) return;
-        const fromFile = asArray(totemDoc?.totems);
+        const fromFetch = totemsArrayFromDoc(totemDoc);
+        const fromBundled = totemsArrayFromDoc(totemsBundled);
+        const fromMain = asArray(main?.totems);
+        const totems = pickLongestArray(fromFetch, fromBundled, fromMain);
         const merged = {
           ...(main || {}),
-          totems: fromFile.length > 0 ? fromFile : asArray(main?.totems),
+          totems,
           mutations: asArray(mut?.mutations),
         };
         setData(merged);
@@ -992,5 +1012,3 @@ export default function AiChatPage() {
     </section>
   );
 }
-
-
