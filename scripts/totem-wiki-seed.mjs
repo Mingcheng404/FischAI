@@ -9,11 +9,11 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { syncTotemsBundle } from "./sync-totems-bundle.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const totemsPath = path.join(projectRoot, "public", "totems.json");
-const totemsBundledPath = path.join(projectRoot, "src", "data", "totems.json");
 const dataPath = path.join(projectRoot, "public", "data.json");
 
 async function main() {
@@ -37,8 +37,7 @@ async function main() {
   }
 
   await fs.writeFile(dataPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
-  await fs.mkdir(path.dirname(totemsBundledPath), { recursive: true });
-  await fs.copyFile(totemsPath, totemsBundledPath);
+  await syncTotemsBundle();
   console.log(
     `totems.json: ${totems.length} totems. Updated data.json metadata; copied to src/data/totems.json for the app bundle.`
   );
