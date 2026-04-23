@@ -782,12 +782,25 @@ export default function AiChatPage() {
   const [suggestions, setSuggestions] = useState([]);
   const [messages, setMessages] = useState([]);
   const chatScrollRef = useRef(null);
+  const chatEndRef = useRef(null);
+
+  function scrollChatToBottom() {
+    const root = chatScrollRef.current;
+    const end = chatEndRef.current;
+    if (root) {
+      root.scrollTop = root.scrollHeight;
+    }
+    end?.scrollIntoView({ block: "end", behavior: "auto" });
+  }
 
   useLayoutEffect(() => {
-    const el = chatScrollRef.current;
-    if (!el) return;
-    el.scrollTop = el.scrollHeight;
-  }, [messages]);
+    scrollChatToBottom();
+    const t1 = requestAnimationFrame(() => {
+      scrollChatToBottom();
+      requestAnimationFrame(scrollChatToBottom);
+    });
+    return () => cancelAnimationFrame(t1);
+  }, [messages, isGenerating]);
 
   useEffect(() => {
     try {
@@ -1016,20 +1029,23 @@ export default function AiChatPage() {
       <div className="mt-4 rounded-2xl border border-slate-800/80 bg-slate-950/30 p-3">
         <div
           ref={chatScrollRef}
-          className="max-h-[380px] min-h-[240px] space-y-3 overflow-y-auto overflow-x-hidden pr-1"
+          className="max-h-[380px] min-h-[240px] overflow-y-auto overflow-x-hidden pr-1"
         >
-          {messages.map((msg, idx) => (
-            <div
-              key={`${msg.role}-${idx}`}
-              className={`rounded-xl border px-3 py-2 text-sm whitespace-pre-wrap ${
-                msg.role === "user"
-                  ? "border-cyan-500/40 bg-cyan-500/10 text-cyan-100"
-                  : "border-slate-700/80 bg-slate-900/40 text-slate-200"
-              }`}
-            >
-              {msg.content}
-            </div>
-          ))}
+          <div className="space-y-3">
+            {messages.map((msg, idx) => (
+              <div
+                key={`${msg.role}-${idx}`}
+                className={`rounded-xl border px-3 py-2 text-sm whitespace-pre-wrap ${
+                  msg.role === "user"
+                    ? "border-cyan-500/40 bg-cyan-500/10 text-cyan-100"
+                    : "border-slate-700/80 bg-slate-900/40 text-slate-200"
+                }`}
+              >
+                {msg.content}
+              </div>
+            ))}
+          </div>
+          <div ref={chatEndRef} className="h-px w-full shrink-0 scroll-mt-2" aria-hidden />
         </div>
 
         <div className="mt-3 flex gap-2">
