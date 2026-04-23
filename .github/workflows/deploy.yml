@@ -30,25 +30,30 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate AI environment variables
+      - name: Check AI environment variables (optional)
         env:
           VITE_PROBEX_API_URL: ${{ secrets.VITE_PROBEX_API_URL }}
           VITE_PROBEX_MODEL: ${{ secrets.VITE_PROBEX_MODEL }}
           VITE_PROBEX_API_KEY: ${{ secrets.VITE_PROBEX_API_KEY }}
         run: |
+          # Secrets are optional: the app runs without them (AI shows "not configured").
+          # Requiring them here caused every Pages deploy to fail for forks and new repos.
+          missing=0
           if [ -z "$VITE_PROBEX_API_KEY" ]; then
-            echo "Missing secret: VITE_PROBEX_API_KEY"
-            exit 1
+            echo "::warning::Secret VITE_PROBEX_API_KEY is not set — remote AI chat will be disabled until you add it in Repo settings → Secrets."
+            missing=1
           fi
           if [ -z "$VITE_PROBEX_API_URL" ]; then
-            echo "Missing secret: VITE_PROBEX_API_URL"
-            exit 1
+            echo "::warning::Secret VITE_PROBEX_API_URL is not set — using app default URL only if key is set."
+            missing=1
           fi
           if [ -z "$VITE_PROBEX_MODEL" ]; then
-            echo "Missing secret: VITE_PROBEX_MODEL"
-            exit 1
+            echo "::warning::Secret VITE_PROBEX_MODEL is not set — using app default model only if key is set."
+            missing=1
           fi
-          echo "AI environment variables are configured."
+          if [ "$missing" -eq 0 ]; then
+            echo "AI repository secrets are configured; they will be baked into the production build."
+          fi
 
       - name: Build
         run: npm run build
@@ -75,4 +80,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+
 
