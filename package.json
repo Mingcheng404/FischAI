@@ -9,6 +9,7 @@
     "build": "node ./scripts/sync-totems-bundle.mjs && vite build",
     "preview": "vite preview",
     "sync:data": "node ./scripts/sync-fisch-data.mjs",
+    "apply:rod-mastery": "node ./scripts/apply-rod-mastery.mjs",
     "seed:totems": "node ./scripts/totem-wiki-seed.mjs"
   },
   "dependencies": {
