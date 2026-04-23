@@ -10,6 +10,7 @@ import { inferTotemCharacteristics } from "./inferCharacteristics.js";
  * @property {string | null} apex_hunt_target — Boss id string when this is a hunt totem.
  * @property {boolean} special_event_pool — Replaces or narrows the roll table (e.g. frightful pool).
  * @property {number} value_multiplier — Sell/value multiplier from data (earnings_multiplier).
+ * @property {number} luck_multiplier — Multiplicative luck granted while active (stack with rod luck in future calcs). Optional JSON field `luck_multiplier` overrides; else defaults to earnings_multiplier until datamined.
  * @property {number} catch_weight_proxy — Placeholder multiplier for relative catch odds until exact game weights exist; currently equals value_multiplier.
  */
 
@@ -58,4 +59,13 @@ export function weatherAffinityScore(totemCharacteristics, fish) {
   if (!Array.isArray(prefs) || prefs.length === 0) return 0;
   const overlap = weatherOverlapWithFish(totemCharacteristics, fish).length;
   return overlap / prefs.length;
+}
+
+/** Preview: multiplicative stack of rod and totem luck (placeholder until game formula is known). */
+export function previewCombinedLuckMultiplier(rodLuckMultiplier, totemCharacteristics) {
+  const r = Number(rodLuckMultiplier);
+  const t = Number(totemCharacteristics?.luck_multiplier);
+  const rod = Number.isFinite(r) && r > 0 ? r : 1;
+  const tot = Number.isFinite(t) && t > 0 ? t : 1;
+  return rod * tot;
 }
