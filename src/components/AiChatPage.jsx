@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
 import { useI18n } from "../i18n.jsx";
-import totemsBundled from "../../public/totems.json";
+import totemsBundled from "../data/totems.json";
 
 const REMOTE_API_URL = import.meta.env.VITE_PROBEX_API_URL || "https://api.probex.top/v1/chat/completions";
 const REMOTE_MODEL = import.meta.env.VITE_PROBEX_MODEL || "deepseek-v3";
