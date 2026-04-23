@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "node ./scripts/sync-totems-bundle.mjs",
     "dev": "vite",
+    "prebuild": "node ./scripts/sync-totems-bundle.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "sync:data": "node ./scripts/sync-fisch-data.mjs",
