@@ -214,6 +214,23 @@ function relevantTotems(totems, queryLower) {
   return [];
 }
 
+function queryMentionsRodMastery(queryLower) {
+  return /mastery|masteries|grand reward/i.test(queryLower);
+}
+
+function relevantRodsForQuery(rods, queryLower) {
+  const list = asArray(rods);
+  const explicit = findMentionByName(list, queryLower);
+  if (explicit) return [explicit];
+  const byName = findByNameIncludes(list, queryLower);
+  if (byName.length > 0) return byName.slice(0, 12);
+  if (queryMentionsRodMastery(queryLower)) {
+    const withM = list.filter((r) => r?.mastery?.track_available);
+    if (withM.length > 0) return withM;
+  }
+  return bestRods(list, 5);
+}
+
 function buildDeterministicCountReply(queryLower, data, t) {
   const asksCount =
     /(how many|count|total|number of|how much|what is the (?:total|count|number)|how many (?:\w+ )*can you see)/i.test(
@@ -238,24 +255,26 @@ function buildDeterministicCountReply(queryLower, data, t) {
   return null;
 }
 
+/** Only replace replies when the model clearly refuses due to missing RAG data — not when it says "context" in normal prose. */
+function looksLikeContextRefusal(text) {
+  const s = String(text || "");
+  return (
+    /not (?:provided|available|included|accessible) (?:in|within) (?:this|the|my) context/i.test(s) ||
+    /\bI (?:do not|don't) have (?:that |the |any |)(?:information|data|details) (?:in|from) (?:this|the|my) (?:context|dataset)\b/i.test(s) ||
+    /\b(?:can't|cannot) (?:access|see) (?:the |)(?:full |complete |)(?:database|dataset)\b/i.test(s)
+  );
+}
+
 function normalizeAiReply(rawReply, query, data, t) {
   const text = String(rawReply || "").trim();
   const queryLower = String(query || "").toLowerCase();
   if (!text) return text;
 
-  const hasInternalContextLeak =
-    /not (?:provided|available) in this context/i.test(text) ||
-    /\bcontext\b/i.test(text) ||
-    /\bsubset\b/i.test(text);
-
-  if (!hasInternalContextLeak) return text;
+  if (!looksLikeContextRefusal(text)) return text;
 
   const deterministic = buildDeterministicCountReply(queryLower, data, t);
   if (deterministic) return deterministic;
 
-  if (/(rod|rods|fishing rod)/i.test(queryLower)) {
-    return `${t("aiChat.countRods", { count: asArray(data?.rods).length })} ${t("aiChat.askRodNameHint")}`;
-  }
   if (/(mutation|mutations)/i.test(queryLower)) {
     return `${t("aiChat.countMutations", { count: asArray(data?.mutations).length })} ${t("aiChat.askMutationNameHint")}`;
   }
@@ -268,9 +287,10 @@ function normalizeAiReply(rawReply, query, data, t) {
   if (/(island|islands|location|locations)/i.test(queryLower)) {
     return t("aiChat.countIslands", { count: asArray(data?.islands).length });
   }
-  return text
-    .replace(/not (?:provided|available) in this context/gi, t("aiChat.noInternalContextWording"))
-    .replace(/\bsubset\b/gi, t("aiChat.noInternalContextWording"));
+  if (/(rod|rods|fishing rod)/i.test(queryLower)) {
+    return `${t("aiChat.countRods", { count: asArray(data?.rods).length })} ${t("aiChat.askRodNameHint")}`;
+  }
+  return text.replace(/not (?:provided|available|included) (?:in|within) (?:this|the|my) context/gi, t("aiChat.noInternalContextWording"));
 }
 
 function randomFrom(list) {
@@ -288,6 +308,41 @@ function rodPowerScore(rod) {
   );
 }
 
+/** Like findBestItemMatch but tie-breaks rods so vague queries (e.g. "rod mastery") don't always pick the same low-stat rod. */
+function findBestRodMatch(rods, queryLower) {
+  const rows = asArray(rods);
+  const exact = findMentionByName(rows, queryLower);
+  if (exact) return exact;
+
+  const queryTokens = queryLower
+    .split(/[^a-z0-9]+/i)
+    .map((x) => x.trim())
+    .filter((x) => x.length >= 3);
+  if (queryTokens.length === 0) return null;
+
+  const masteryBoost = /mastery|masteries|grand reward/i.test(queryLower);
+
+  let best = null;
+  let bestScore = 0;
+  let bestTie = -Infinity;
+  for (const item of rows) {
+    const name = String(item?.name || "").toLowerCase();
+    if (!name) continue;
+    const nameTokens = name.split(/[^a-z0-9]+/i).filter((x) => x.length >= 3);
+    if (nameTokens.length === 0) continue;
+    const overlap = queryTokens.filter((tok) => nameTokens.includes(tok)).length;
+    if (overlap === 0) continue;
+    const score = overlap / nameTokens.length;
+    const tie = (masteryBoost && item?.mastery?.track_available ? 1000 : 0) + rodPowerScore(item);
+    if (score > bestScore || (score === bestScore && tie > bestTie)) {
+      best = item;
+      bestScore = score;
+      bestTie = tie;
+    }
+  }
+  return bestScore >= 0.34 ? best : null;
+}
+
 function extractRodComparisonPair(queryLower, rods) {
   const list = asArray(rods);
   const directMentions = list.filter((r) => queryLower.includes(String(r?.name || "").toLowerCase()));
@@ -295,8 +350,8 @@ function extractRodComparisonPair(queryLower, rods) {
 
   const parts = queryLower.split(/\s+(?:or|vs|versus|against|better than|stronger than)\s+/i);
   if (parts.length >= 2) {
-    const left = findBestItemMatch(list, parts[0]);
-    const right = findBestItemMatch(list, parts.slice(1).join(" "));
+    const left = findBestRodMatch(list, parts[0]);
+    const right = findBestRodMatch(list, parts.slice(1).join(" "));
     if (left && right && left.id !== right.id) return [left, right];
   }
   return null;
@@ -434,7 +489,7 @@ function buildChartsForQuery(query, data, t) {
   if (rodPair) return buildRodComparisonCharts(rodPair, t);
   const charts = [];
 
-  const rodHit = findBestItemMatch(rods, queryLower);
+  const rodHit = findBestRodMatch(rods, queryLower);
   if (rodHit) {
     charts.push({
       id: "rod-focus",
@@ -502,21 +557,30 @@ function buildAiContext(data, query) {
   const mutations = asArray(data?.mutations);
   const islands = asArray(data?.islands);
   const totems = asArray(data?.totems);
-  const rodHit = findBestItemMatch(rods, queryLower);
+  const rodHit = findBestRodMatch(rods, queryLower);
   const fishHit = findBestItemMatch(fish, queryLower);
   const mutationHit = findBestItemMatch(mutations, queryLower);
   const islandHit = findBestItemMatch(islands, queryLower);
   const totemHit = findBestItemMatch(totems, queryLower);
-  const hasSpecificItem = Boolean(rodHit || fishHit || mutationHit || islandHit || totemHit);
+  const explicitRodMention = findMentionByName(rods, queryLower);
+  const genericRodMasteryQuestion = queryMentionsRodMastery(queryLower) && !explicitRodMention;
+  const hasSpecificItem = Boolean(
+    (!genericRodMasteryQuestion && rodHit) || fishHit || mutationHit || islandHit || totemHit
+  );
+  const rodRecordsLimit = queryMentionsRodMastery(queryLower) ? 40 : 10;
+  const rodFocusRow =
+    explicitRodMention ||
+    (rodHit && !fishHit && !mutationHit && !islandHit && !totemHit ? rodHit : null);
 
   const context = {
     source: "local_fisch_database",
     instructions_for_model: [
-      "Repository scripts are not in this context. Totem rows come from public/totems.json (merged at load); other game data from public/data.json.",
+      "Totems load from public/totems.json merged with data.json; rod rows may include a `mastery` object (track_available, wiki links, quest placeholders).",
       "For totem counts, use total_counts.totems; it must match totem_names_all.length. List real totem names from totem_names_all and relevant.totems.",
       "Never infer totem data from a single 'No Totem' row; the full set is in totem_names_all.",
       "Do not claim that relevant arrays are the full database except where total_counts is explicit.",
       "If user asks for all mutations, state the total using total_counts.mutations and provide representative entries from relevant.mutations unless explicitly asked for exhaustive list.",
+      "For Rod Mastery questions, use relevant.rods[].mastery; when many rods are listed, they are the wiki Rod Mastery set (track_available true). Answer from that data — do not claim missing context unless a field is literally null.",
     ],
     total_counts: {
       rods: rods.length,
@@ -528,7 +592,7 @@ function buildAiContext(data, query) {
     totem_names_all: totems.map((x) => x?.name).filter(Boolean),
     requested_item: hasSpecificItem
       ? {
-          type: rodHit
+          type: rodFocusRow
             ? "rod"
             : fishHit
             ? "fish"
@@ -537,19 +601,13 @@ function buildAiContext(data, query) {
             : islandHit
             ? "island"
             : "totem",
-          name: (rodHit || fishHit || mutationHit || islandHit || totemHit)?.name || "",
+          name: (rodFocusRow || fishHit || mutationHit || islandHit || totemHit)?.name || "",
         }
       : null,
     mutation_name_index: mutations.map((m) => m?.name).filter(Boolean),
     relevant: {
       rods: compactRecords(
-        hasSpecificItem
-          ? rodHit
-            ? [rodHit]
-            : []
-          : findByNameIncludes(rods, queryLower).length > 0
-          ? findByNameIncludes(rods, queryLower)
-          : bestRods(rods, 5),
+        hasSpecificItem ? (rodFocusRow ? [rodFocusRow] : []) : relevantRodsForQuery(rods, queryLower),
         [
           "name",
           "price",
@@ -561,7 +619,9 @@ function buildAiContext(data, query) {
           "passive_effect",
           "obtain_method",
           "obtain_location",
-        ]
+          "mastery",
+        ],
+        rodRecordsLimit
       ),
       fish: compactRecords(
         hasSpecificItem
