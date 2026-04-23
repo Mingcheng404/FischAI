@@ -148,3 +148,4 @@ export function isFishInSeason(fish, seasonId) {
   if (!s) return true;
   return seasons.some((x) => String(x).toLowerCase() === s);
 }
+
