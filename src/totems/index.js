@@ -5,4 +5,5 @@ export {
   getTotemById,
   weatherOverlapWithFish,
   weatherAffinityScore,
+  previewCombinedLuckMultiplier,
 } from "./totemCatalog.js";
