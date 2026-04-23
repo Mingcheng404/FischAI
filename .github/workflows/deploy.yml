@@ -55,12 +55,17 @@ jobs:
             echo "AI repository secrets are configured; they will be baked into the production build."
           fi
 
+      # Copy public/totems.json → src/data/totems.json (Vite cannot import from public/).
+      # Run here explicitly so deploy works even if package.json "build" is still "vite build" on main.
+      - name: Sync totems for bundle import
+        run: node ./scripts/sync-totems-bundle.mjs
+
       - name: Build
-        run: npm run build
         env:
           VITE_PROBEX_API_URL: ${{ secrets.VITE_PROBEX_API_URL }}
           VITE_PROBEX_MODEL: ${{ secrets.VITE_PROBEX_MODEL }}
           VITE_PROBEX_API_KEY: ${{ secrets.VITE_PROBEX_API_KEY }}
+        run: npx vite build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -80,6 +85,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
 
