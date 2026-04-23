@@ -13,6 +13,16 @@ function numberOr(value, fallback) {
 }
 
 /**
+ * Multiplicative player luck while the totem is active (1 = no bonus).
+ * Uses `totem.luck_multiplier` from JSON when set; otherwise derives from earnings tier as a placeholder.
+ */
+function resolveLuckMultiplier(totem, valueMult) {
+  const fromJson = Number(totem?.luck_multiplier);
+  if (Number.isFinite(fromJson) && fromJson > 0) return fromJson;
+  return valueMult;
+}
+
+/**
  * @param {object} totem — row from totems.json
  * @returns {object} TotemCharacteristics (see totemCatalog.js typedef)
  */
@@ -37,6 +47,7 @@ export function inferTotemCharacteristics(totem) {
       apex_hunt_target: null,
       special_event_pool: false,
       value_multiplier: 1,
+      luck_multiplier: 1,
       catch_weight_proxy: 1,
     };
   }
@@ -109,6 +120,7 @@ export function inferTotemCharacteristics(totem) {
   const weatherWhenActive = uniqueStrings(weather);
   const tags = uniqueStrings(eventTags);
   const mutFamilies = uniqueStrings(mutationSurgeFamilies);
+  const luckMult = resolveLuckMultiplier(totem, valueMult);
 
   return {
     weather_when_active: weatherWhenActive,
@@ -118,6 +130,8 @@ export function inferTotemCharacteristics(totem) {
     apex_hunt_target: apexHuntTarget,
     special_event_pool: specialEventPool,
     value_multiplier: valueMult,
+    luck_multiplier: luckMult,
     catch_weight_proxy: valueMult,
   };
 }
+
